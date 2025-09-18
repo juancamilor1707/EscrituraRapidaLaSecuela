@@ -5,9 +5,9 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.example</groupId>
-    <artifactId>EscrituraRapidaLaSecuela</artifactId>
+    <artifactId>EscrituraRapida</artifactId>
     <version>1.0-SNAPSHOT</version>
-    <name>EscrituraRapidaLaSecuela</name>
+    <name>EscrituraRapida</name>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -60,8 +60,7 @@
                         <!-- Default configuration for running with: mvn clean javafx:run -->
                         <id>default-cli</id>
                         <configuration>
-                            <mainClass>
-                                com.example.escriturarapidalasecuela/com.example.escriturarapidalasecuela.HelloApplication
+                            <mainClass>com.example.escriturarapida/com.example.escriturarapida.App1
                             </mainClass>
                             <launcher>app</launcher>
                             <jlinkZipName>app</jlinkZipName>

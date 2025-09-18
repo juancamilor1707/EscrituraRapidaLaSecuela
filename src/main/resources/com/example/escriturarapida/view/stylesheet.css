@@ -1,0 +1,40 @@
+.button {
+    -fx-background-color: #f7a11b;
+    -fx-padding: 8 20 8 20;
+    -fx-background-radius: 0;
+    -fx-border-color: #b3541e;
+    -fx-border-width: 3px;
+    -fx-border-radius: 0;
+    -fx-effect: dropshadow(gaussian, black, 2, 0.7, 2, 2);
+}
+
+.button:hover {
+    -fx-background-color: #ff6a00;
+    -fx-cursor: hand;
+}
+
+.button:pressed {
+    -fx-background-color: #c74a00;
+    -fx-translate-y: 2px;
+}
+
+.rules {
+    -fx-background-image: url("Image/Rules.png");
+    -fx-background-size: cover;
+}
+
+.n {
+    -fx-background-image: url("Image/level.png");
+    -fx-background-size: cover;
+}
+
+.menu {
+    -fx-background-image: url("Image/menu.png");
+    -fx-background-size: cover;
+}
+
+.stats {
+    -fx-background-image: url("Image/stadistic.png");
+    -fx-background-size: cover;
+}
+
