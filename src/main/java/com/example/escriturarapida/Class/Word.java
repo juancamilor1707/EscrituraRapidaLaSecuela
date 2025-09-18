@@ -13,21 +13,23 @@ public class Word {
 
     public Word() {
         easy = new ArrayList<>(Arrays.asList(
-                "casa", "perro", "gato", "sol", "coche", "árbol", "libro", "lápiz", "taza", "pan",
-                "mesa", "silla", "puerta", "ventana", "luz", "mano", "pie", "agua", "leche", "pez",
-                "pájaro", "camino", "tren", "bus", "reloj", "teléfono", "llave", "zapato", "bolsa", "sombrero",
-                "manzana", "pera", "uva", "plátano", "naranja", "sal", "azúcar", "arroz", "carne", "huevo",
-                "pelota", "juego", "estrella", "cielo", "lluvia", "viento", "fuego", "nieve", "pared", "suelo"
+                "abrigo", "cóndor", "escápula", "pintura", "telescopio", "alfombra", "murciélago", "relojera", "sándwich", "paraguas",
+                "bicicleta", "ventilador", "escalera", "almohada", "panadería", "mariposa", "libélula", "reloj", "fósforo", "candelabro",
+                "muralla", "pintor", "globo", "camiseta", "corredor", "mapache", "lámpara", "cárcel", "rascacielos", "murmullo",
+                "carretera", "alfiler", "cuchara", "esmalte", "plátano", "bicicleta", "pingüino", "estrella", "espátula", "cuaderno",
+                "jirafa", "lápiz", "fotografía", "lavadora", "computadora", "teléfono", "murciélago", "paraguas", "ventana", "teclado"
         ));
 
+        // Nivel medio
         medium = new ArrayList<>(Arrays.asList(
-                "montaña", "río", "bosque", "puente", "pueblo", "escuela", "mercado", "castillo", "palacio", "jardín",
-                "cuadro", "espejo", "cristal", "profesor", "alumno", "botella", "pluma", "cuaderno", "computadora", "impresora",
-                "elefante", "jirafa", "canguro", "tortuga", "delfín", "loro", "gorrión", "mono", "conejo", "león",
-                "motor", "escalera", "bicicleta", "cámara", "bolsillo", "cartera", "boleto", "viaje", "puerto", "estación",
-                "invierno", "verano", "primavera", "otoño", "tormenta", "trueno", "relámpago", "lágrima", "océano", "isla"
+                "hipopótamo", "ornitorrinco", "zoológico", "extraordinario", "transatlántico", "anticonstitucional", "paralelepípedo", "cristalografía", "electrodoméstico", "conmutador",
+                "cancillería", "reivindicación", "fotolitografía", "perspectiva", "contrarrevolución", "desoxirribonucleico", "polimorfismo", "cibernético", "paradójico", "hiperactividad",
+                "neumonoultramicroscopicosilicovolcanoconiosis", "incomprensible", "transeúnte", "reconocimiento", "inconstitucional", "desafortunadamente", "subterráneo", "extraterrestre", "inmortalidad", "retroalimentación",
+                "biodegradable", "electroencefalograma", "microorganismo", "cuantificación", "antropomórfico", "inverosímil", "hipersensibilidad", "contemporáneo", "transcripción", "fotovoltaico",
+                "paralelepípedo", "metamorfosis", "desoxirribonucleótido", "neurociencia", "catalizador", "contradicción", "hipotéticamente", "aceleración", "subestimación", "antropológico"
         ));
 
+        // Nivel hard
         hard = new ArrayList<>(Arrays.asList(
                 "inverosímil", "electroencefalografía", "otorrinolaringología", "paralelepípedo", "transustanciación",
                 "esternocleidomastoideo", "desoxirribonucleico", "anticonstitucional", "interdisciplinario", "extraordinario",
@@ -38,7 +40,10 @@ public class Word {
                 "homeostasis", "apendicectomía", "tridimensional", "heterogéneo", "inconmensurable",
                 "constitucionalismo", "desoxirribosa", "intertextualidad", "oxímoron", "parafrasear",
                 "transcendental", "circunferencia", "epistemología", "isósceles", "anacronismo",
-                "desmitificación", "hipérbaton", "cosmogonía", "sinestesia", "ontología"
+                "desmitificación", "hipérbaton", "cosmogonía", "sinestesia", "ontología",
+                "autopoiesis", "neurocognitivo", "paleontología", "fisiopatología", "antropocentrismo",
+                "electrocardiograma", "microscopía", "bioinformática", "paradiplomacia", "fenomenología",
+                "biocompatibilidad", "microbiología", "electromagnetismo", "termodinámica", "hiperconectividad"
         ));
 
         Collections.shuffle(easy);
