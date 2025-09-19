@@ -1,4 +1,4 @@
-package com.example.escriturarapida.Class;
+package com.example.escriturarapida.models;
 
 public class Player {
     private int level = 1;

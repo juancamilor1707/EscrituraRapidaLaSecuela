@@ -7,12 +7,11 @@ import javafx.stage.Stage;
 
 
 import java.io.IOException;
-//Inicio Programa
-public class App1 extends Application {
+public class Main extends Application {
     @Override
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(App1.class.getResource("/com/example/escriturarapida/view/Menu.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 680, 680);
+        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("/com/example/escriturarapida/view/Menu.fxml"));
+        Scene scene = new Scene(fxmlLoader.load(), 655, 576);
         stage.setTitle("Miniproyecto #1");
         stage.setScene(scene);
         stage.show();

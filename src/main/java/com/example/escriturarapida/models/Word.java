@@ -1,4 +1,4 @@
-package com.example.escriturarapida.Class;
+package com.example.escriturarapida.models;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -11,6 +11,7 @@ public class Word {
     private final List<String> medium;
     private final List<String> hard;
 
+    // Easy Words
     public Word() {
         easy = new ArrayList<>(Arrays.asList(
                 "abrigo", "cóndor", "escápula", "pintura", "telescopio", "alfombra", "murciélago", "relojera", "sándwich", "paraguas",
@@ -20,7 +21,7 @@ public class Word {
                 "jirafa", "lápiz", "fotografía", "lavadora", "computadora", "teléfono", "murciélago", "paraguas", "ventana", "teclado"
         ));
 
-        // Nivel medio
+        // Medium Words
         medium = new ArrayList<>(Arrays.asList(
                 "hipopótamo", "ornitorrinco", "zoológico", "extraordinario", "transatlántico", "anticonstitucional", "paralelepípedo", "cristalografía", "electrodoméstico", "conmutador",
                 "cancillería", "reivindicación", "fotolitografía", "perspectiva", "contrarrevolución", "desoxirribonucleico", "polimorfismo", "cibernético", "paradójico", "hiperactividad",
@@ -29,7 +30,7 @@ public class Word {
                 "paralelepípedo", "metamorfosis", "desoxirribonucleótido", "neurociencia", "catalizador", "contradicción", "hipotéticamente", "aceleración", "subestimación", "antropológico"
         ));
 
-        // Nivel hard
+        // Hard Words
         hard = new ArrayList<>(Arrays.asList(
                 "inverosímil", "electroencefalografía", "otorrinolaringología", "paralelepípedo", "transustanciación",
                 "esternocleidomastoideo", "desoxirribonucleico", "anticonstitucional", "interdisciplinario", "extraordinario",

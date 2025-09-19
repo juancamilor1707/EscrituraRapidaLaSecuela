@@ -1,4 +1,4 @@
-package com.example.escriturarapida.Class;
+package com.example.escriturarapida.models;
 
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
@@ -6,7 +6,7 @@ import javafx.util.Duration;
 
 import java.util.List;
 
-public class Game {
+public class Game  {
     private final Player player;
     private final Word word;
 
@@ -14,16 +14,15 @@ public class Game {
     private int mediumIndex = 0;
     private int hardIndex = 0;
 
-    private int baseTime = 20;   // Tiempo inicial por palabra
-    private int remainingTime;   // Tiempo que va bajando
-    private Timeline timeline;   // Cronómetro
+    private int baseTime = 20;   // Inicial time per word
+    private int remainingTime;   // Time remaining
+    private Timeline timeline;   // Timer
 
     public Game(Player player, Word word) {
         this.player = player;
         this.word = word;
     }
 
-    /** Devuelve la palabra actual según el nivel del jugador */
     public String getCurrentWord() {
         List<String> list = getListByLevel();
         int idx = getIndexByLevel();
@@ -34,7 +33,7 @@ public class Game {
         return "";
     }
 
-    /** Avanza a la siguiente palabra y ajusta nivel/tiempo */
+    /** Goes to the next level and adjust the level/timer */
     public void nextWord() {
         if (player.getLevel() <= 15) {
             easyIndex++;
@@ -52,7 +51,7 @@ public class Game {
         player.nextLevel();
     }
 
-    /** Obtiene la lista de palabras según el nivel */
+    /** Obtains word list based on difficulty */
     private List<String> getListByLevel() {
         if (player.getLevel() <= 15) {
             return word.getEasy();
@@ -63,7 +62,7 @@ public class Game {
         }
     }
 
-    /** Obtiene el índice correcto según la dificultad */
+    /** Obtains correct index based on difficulty */
     private int getIndexByLevel() {
         if (player.getLevel() <= 15) {
             return easyIndex;
@@ -75,26 +74,26 @@ public class Game {
     }
 
     /**
-     * Arranca un nuevo timer.
-     * @param onTick   acción a ejecutar cada segundo
-     * @param onFinish acción a ejecutar cuando el tiempo llega a 0
+     * Starts new timer
+     * @param onTick
+     * @param onFinish
      */
     public void startTimer(Runnable onTick, Runnable onFinish) {
-        // Detener si ya había un timer activo
+        // Stops when timer = 0/null<
         if (timeline != null) {
             timeline.stop();
         }
 
         remainingTime = baseTime;
 
-        // Crear timeline (1 segundo)
+        // Start timeline (1s)
         timeline = new Timeline(
                 new KeyFrame(Duration.seconds(1), e -> {
                     remainingTime--;
-                    onTick.run(); // actualiza UI
+                    onTick.run(); //  UI update
                     if (remainingTime <= 0) {
                         timeline.stop();
-                        onFinish.run(); // termina el juego
+                        onFinish.run(); // ends game
                     }
                 })
         );

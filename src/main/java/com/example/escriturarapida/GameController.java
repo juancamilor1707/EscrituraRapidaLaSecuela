@@ -1,8 +1,8 @@
 package com.example.escriturarapida;
 
-import com.example.escriturarapida.Class.Game;
-import com.example.escriturarapida.Class.Player;
-import com.example.escriturarapida.Class.Word;
+import com.example.escriturarapida.models.Game;
+import com.example.escriturarapida.models.Player;
+import com.example.escriturarapida.models.Word;
 import javafx.animation.PauseTransition;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -35,29 +35,28 @@ public class GameController {
 
     @FXML
     public void initialize() {
-        // Crear jugador y lista de palabras
+        // Create player and wordlist
         Player player = new Player();
         Word word = new Word();
         game = new Game(player, word);
 
-        // Acción con ENTER en el TextField
+        // Enter action on TextField
         answerField.setOnAction(e -> validateWord());
 
-        // Mostrar la primera palabra
+        // Shows first word
         showWord();
 
-        // Iniciar timer
+        // Start timer
         startTimer();
     }
 
-    /** Muestra la palabra y nivel en pantalla */
+    /** Shows word and level on screen */
     private void showWord() {
         wordLabel.setText(game.getCurrentWord());
-        levelLabel.setText("Nivel " + game.getLevel());
         answerField.clear();
     }
 
-    /** Arranca el temporizador de este turno */
+    /** Starts the timer */
     private void startTimer() {
         game.startTimer(
                 () -> timerLabel.setText("Tiempo: " + game.getRemainingTime()),
@@ -71,27 +70,35 @@ public class GameController {
         );
     }
 
-    /** Valida lo que el jugador escribió */
+    /** Validates player answer */
     @FXML
     private void validateWord() {
         String correct = wordLabel.getText();
         String userInput = answerField.getText();
 
         if (game.getPlayer().wordVerification(correct, userInput)) {
-            // Palabra correcta
+            // Correct Word
             correctWords++;
+            wordLabel.setText("¡Palabra Correcta!");
+
+            PauseTransition pause = new PauseTransition(Duration.seconds(0.3));
+            pause.setOnFinished(e -> wordLabel.setText(game.getCurrentWord()));
+            pause.play();
+
+            levelLabel.setText("Nivel " + game.getLevel());
             game.nextWord();
-            showWord();
+            answerField.clear();
             startTimer();
+            showWord();
         } else {
-            // Palabra incorrecta
+            // Incorrect Word
             errors++;
             String oldText = wordLabel.getText();
             wordLabel.setText("¡Palabra incorrecta!");
-            answerField.clear();
 
             PauseTransition pause = new PauseTransition(Duration.seconds(0.6));
             pause.setOnFinished(e -> wordLabel.setText(oldText));
+            answerField.clear();
             pause.play();
         }
     }
