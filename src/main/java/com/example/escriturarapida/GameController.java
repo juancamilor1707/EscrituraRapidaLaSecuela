@@ -89,7 +89,6 @@ public class GameController {
             game.nextWord();
             answerField.clear();
             startTimer();
-            showWord();
         } else {
             // Incorrect Word
             errors++;
